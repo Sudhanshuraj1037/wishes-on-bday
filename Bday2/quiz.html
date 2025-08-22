@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday Pallavi!</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #da55ff, #ff36bc);
+      overflow-x: hidden;
+      color: #333;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-top: 1em;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .section {
+      margin: 2em auto;
+      padding: 2em;
+      max-width: 800px;
+      background:rgb(255, 121, 244);
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+
+    .question {
+      margin: 1em 0;
+      text-align: left;
+    }
+
+    .question label {
+      display: block;
+      margin: 0.5em 0;
+    }
+
+    button {
+      padding: 0.7em 1.5em;
+      font-size: 1em;
+      border: none;
+      border-radius: 8px;
+      background-color: #fa6de9;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: rgb(254, 0, 144);
+    }
+
+    #result {
+      font-size: 1.5em;
+      margin-top: 1em;
+      color: #444;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-in {
+      animation: fadeIn 1.5s ease forwards;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 class="fade-in">A Surprise Quiz For Gurlsss...😝💅🏻</h1>
+
+  <div class="section fade-in">
+    <p>Welcome to Quiz Section. Scroll Down to answer Quiz, So that I can see how many of you know about Prachi well.👀<br>And <i><b>Send me ( @snowdrop094_ ) screenshot</b></i> after Submitting Quiz.📲</p>
+  </div>
+
+  <div class="section fade-in" id="quiz">
+    <h2>🧠 Friend Quiz</h2>
+    <form id="friendQuiz">
+      <div class="question">
+        <strong>1. Which is Prachi's fvrt Kdrama?</strong>
+        <label><input type="radio" name="q1" value="C++"> Snowdrop</label>
+        <label><input type="radio" name="q1" value="Python"> Good Boy</label>
+        <label><input type="radio" name="q1" value="Vincenzo"> Vincenzo</label>
+      </div>
+
+      <div class="question">
+        <strong>2. What does she like to do when she gets bored?</strong>
+        <label><input type="radio" name="q2" value="Gaming"> Reading Books</label>
+        <label><input type="radio" name="q2" value="Cooking"> Cooking</label>
+        <label><input type="radio" name="q2" value="Finance apps"> Playing Video Games</label>
+      </div>
+
+      <div class="question">
+        <strong>3. What is her dream for the future?</strong>
+        <label><input type="radio" name="q3" value="Cabin Crew"> Cabin Crew</label>
+        <label><input type="radio" name="q3" value="Anime.js"> Doctor</label>
+        <label><input type="radio" name="q3" value="Framer Motion"> Content Creator</label>
+      </div>
+
+      <div class="question">
+        <strong>4. What would she like to be gifted on her bday by her friends?</strong>
+        <label><input type="radio" name="q4" value="Speed coding"> Chocolates</label>
+        <label><input type="radio" name="q4" value="Handcrafted Cards and Letters"> Handcrafted Cards and Letters</label>
+        <label><input type="radio" name="q4" value="Debugging"> Clothes</label>
+      </div>
+
+      <div class="question">
+        <strong>5. Which nickname does she love that was given by her friends?</strong>
+        <label><input type="radio" name="q5" value="Surprise projects"> Pretty Girl</label>
+        <label><input type="radio" name="q5" value="Send memes"> Sundari</label>
+        <label><input type="radio" name="q5" value="Bhutki"> Bhutki</label>
+        
+      </div>
+
+      <button type="button" onclick="calculateScore()">Submit Quiz</button>
+    </form>
+    <div id="result"></div><br>
+    
+    <button onclick="window.location.href='birthday.html'" class="magic-button">
+  Previous Page 🔙
+</button><br><br>
+<button onclick="window.location.href='login.html'" class="magic-button">
+  For Bday Girl 🦋
+</button>
+
+<style>
+  .magic-button {
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    background-color: #ff69b4; /* Hot Pink */
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(255, 105, 180, 0.4);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+
+  .magic-button:hover {
+    background-color: #ffc0cb; /* Light Pink */
+    color: #ff1493; /* Deep Pink text */
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(255, 105, 180, 0.6);
+  }
+</style>
+  </div>
+
+  <audio autoplay loop>
+    <source src="Recording (3).m4a" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    function calculateScore() {
+      const answers = {
+        q1: "Vincenzo",
+        q2: "Cooking",
+        q3: "Cabin Crew",
+        q4: "Handcrafted Cards and Letters",
+        q5: "Bhutki"
+      };
+
+      let score = 0;
+      let total = Object.keys(answers).length;
+
+      for (let key in answers) {
+        let selected = document.querySelector(`input[name="${key}"]:checked`);
+        if (selected && selected.value === answers[key]) {
+          score++;
+        }
+      }
+
+      let percentage = Math.round((score / total) * 100);
+      let message = "";
+
+      if (percentage === 100) {
+        message = "💯 You know Prachi perfectly! You're a true friend!";
+      } else if (percentage >= 60) {
+        message = `😊 You scored ${percentage}%. You know Prachi quite well!`;
+      } else {
+        message = `😅 You scored ${percentage}%. Time to hang out more and learn about Prachi!`;
+      }
+
+      document.getElementById("result").innerText = message;
+    }
+  </script>
+
+</body>
+</html>

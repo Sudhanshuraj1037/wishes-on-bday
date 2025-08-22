@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday Queen🌟!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Pacifico', cursive;
+      background: linear-gradient(to bottom, #ffa4c9, #fb74aa);
+      overflow-x: hidden;
+    }
+    h1, h2 {
+      text-align: center;
+      color: #ff3399;
+      margin-top: 40px;
+    }
+    .countdown {
+      text-align: center;
+      font-size: 2em;
+      margin: 20px;
+      color: #cc0066;
+    }
+    .audio-btn {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      background-color: #ff66b2;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.2em;
+      cursor: pointer;
+    }
+    .poem {
+      text-align: center;
+      font-size: 1.5em;
+      margin: 40px auto;
+      width: 80%;
+      color: #b70092;
+    }
+    .gallery, .videos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin: 40px;
+    }
+    .gallery div, .videos div {
+      width: 200px;
+      text-align: center;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 0 10px hotpink;
+      transition: transform 0.3s;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    .videos video {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #ff99cc;
+    }
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 9999;
+    }
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Iconic_heart.svg/1024px-Iconic_heart.svg.png') no-repeat center;
+      background-size: contain;
+      animation: float 6s linear infinite;
+    }
+    @keyframes float {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(-100vh); opacity: 0; }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+      animation: fadeInUp 1s ease forwards;
+    }
+    #surpriseContent {
+      display: none;
+      animation: fadeInUp 2s ease-in;
+    }
+  </style>
+</head>
+<body>
+
+<h1>There’s something for you, pretty girl 💝</h1>
+<div class="countdown" id="countdown"></div>
+
+<!-- Hidden surprise content -->
+<div id="surpriseContent">
+  <!-- <button class="audio-btn" onclick="document.getElementById('voice').play()">💌 Play Message</button>
+  <audio id="voice" src="voice.m4a" type="audio/m4a"></audio> -->
+
+  <div class="poem" id="poem"></div>
+
+  <h2>🌸 Her Beautiful Moments</h2>
+  <div class="gallery">
+    <div><img src="WhatsApp Image 2025-08-20 at 7.28.36 PM.jpeg"><p class="fade-in">Hyy...अदाएँ😭💞🙈<br>Her smile could light up a thousand sunsets.⛅</p></div>
+    <div><img src="WhatsApp Image 2025-08-20 at 7.28.32 PM.jpeg"><p class="fade-in">Grace in every glance, elegance in every pose.🕊️</p></div>
+    <div><img src="WhatsApp Image 2025-08-20 at 8.52.45 PM.jpeg"><p class="fade-in">She’s a natural in front of the camera—every pose radiates confidence, charm, and pure star energy ✨</p></div>
+    <div><img src="WhatsApp Image 2025-08-20 at 7.34.50 PM.jpeg"><p class="fade-in">Eyes that hold galaxies, heart that holds warmth.🌌</p></div>
+    <div><img src="WhatsApp Image 2025-08-20 at 7.27.58 PM.jpeg"><p class="fade-in">She’s poetry in motion, even when standing still.🧚🏻‍♀️</p></div>
+    <div><img src="WhatsApp Image 2025-08-20 at 8.52.53 PM.jpeg"><p class="fade-in">She’s the kind of beauty that makes you believe in magic.🪄</p></div>
+    <div><img src="WhatsApp Image 2025-08-21 at 12.01.38 AM.jpeg"><p class="fade-in">🌟A soul so radiant, even the stars blush.😊🪄</p></div>
+    <div><img src="WhatsApp Image 2025-08-21 at 12.01.39 AM.jpeg"><p class="fade-in">🌸 Her smile is a quiet kind of magic—pure, kind, and effortlessly beautiful.</p></div>
+
+    <div><img src="WhatsApp Image 2025-08-20 at 8.52.59 PM.jpeg"><p class="fade-in">🌙 She’s like moonlight—soft, serene, and full of grace.</p></div>
+    <div><img src="WhatsApp Image 2025-08-20 at 8.52.57 PM.jpeg"><p class="fade-in">Her eyes are pure magic—soft, deep, and impossible to forget.🪶👀</p></div>
+  </div>
+
+  <h2>🎥 Special Memories</h2>
+  <div class="videos">
+    <div><video controls><source src="WhatsApp Video 2025-08-20 at 7.31.19 PM.mp4" type="video/mp4"></video><p class="fade-in">Every moment with her is a cinematic masterpiece.🤍</p></div>
+    <div><video controls><source src="WhatsApp Video 2025-08-20 at 7.28.31 PM.mp4" type="video/mp4"></video><p class="fade-in">She turns ordinary days into unforgettable stories.💮</p></div>
+    <div><video controls><source src="WhatsApp Video 2025-08-20 at 7.27.49 PM.mp4" type="video/mp4"></video><p class="fade-in">Her laughter echoes like music.💗</p></div>
+    <div><video controls><source src="WhatsApp Video 2025-08-20 at 7.27.56 PM.mp4" type="video/mp4"></video><p class="fade-in">She was like Radha Rani—divine beauty, graceful presence, and a heart that felt like pure love.🪞🫠🤌🏻</p></div>
+    <div><video controls><source src="WhatsApp Video 2025-08-20 at 9.02.07 PM.mp4" type="video/mp4"></video><p class="fade-in">Her purity wasn’t just in her actions—it was in the way she smiled at the world, as if even sorrow bowed before her grace.🦋👸🏻</p></div>
+    <div><video controls><source src="WhatsApp Video 2025-08-21 at 2.41.36 PM.mp4" type="video/mp4"></video><p class="fade-in">Her expressions? Pure magic. Like the universe paused to admire her.👀💖</p></div>
+
+  </div>
+  <button class="audio-btn" onclick="window.location.href='quiz.html'"  >
+  Surprise Page💅🏻
+</button>
+
+<style>
+  .audio-btn {
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: pink;
+    background-color: #fa57a8; /* Hot Pink */
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(255, 105, 180, 0.4);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+
+  .audio-btn:hover {
+    background-color: #ffc0cb; /* Light Pink */
+    color: #ff1493; /* Deep Pink text */
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(255, 105, 180, 0.6);
+  }
+</style>
+</div>
+
+<canvas id="confetti"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+
+
+<script>
+  // 🎈 Confetti on load
+  confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
+
+  // 💖 Floating hearts
+  for (let i = 0; i < 30; i++) {
+    let heart = document.createElement('div');
+    heart.className = 'heart';
+    heart.style.left = Math.random() * window.innerWidth + 'px';
+    heart.style.animationDuration = (3 + Math.random() * 3) + 's';
+    document.body.appendChild(heart);
+  }
+
+  // 🕰 Countdown
+  const countdownEl = document.getElementById('countdown');
+  const targetDate = new Date("2025-09-04T00:00:00").getTime();
+
+  const interval = setInterval(() => {
+    const now = new Date().getTime();
+    const distance = targetDate - now;
+    if (distance < 0) {
+      clearInterval(interval);
+      countdownEl.innerHTML = "🎆 Happy Birthday Beautiful Soul💗!";
+      document.getElementById("surpriseContent").style.display = "block";
+      launchFireworks();
+      document.getElementById('voice').play();
+      revealPoem();
+      return;
+    }
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((distance / (1000 * 60)) % 60);
+    const seconds = Math.floor((distance / 1000) % 60);
+    countdownEl.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+  }, 1000);
+
+  // 🧨 Fireworks
+  function launchFireworks() {
+    const duration = 5 * 1000;
+    const end = Date.now() + duration;
+    (function frame() {
+      confetti({
+        particleCount: 5,
+        angle: 60,
+        spread: 55,
+        origin: { x: 0 }
+      });
+      confetti({
+        particleCount: 5,
+        angle: 120,
+        spread: 55,
+        origin: { x: 1 }
+      });
+      if (Date.now() < end) {
+        requestAnimationFrame(frame);
+      }
+    })();
+  }
+
+    // ✍️ Poem reveal
+  const poemLines = [
+    "Roses are pink, skies are bright,",
+    "Today’s your day, full of light.",
+    "Smiles and sparkles, joy and cheer,",
+    "Wishing you magic all through the year!"
+  ];
+  let i = 0;
+  function revealPoem() {
+    if (i < poemLines.length) {
+      document.getElementById("poem").innerHTML += poemLines[i] + "<br/>";
+      i++;
+      setTimeout(revealPoem, 1500);
+    }
+  }
+
+  // 🌟 Scroll-triggered fade-in for compliments
+  const fadeEls = document.querySelectorAll('.fade-in');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  fadeEls.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login form</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <!-- <script src="https://kit.fontawesome.com/97ebdf5864.js" crossorigin="anonymous"></script> -->
+    <style>
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    transition: 0.5s;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    background: url(BTS_announces_they_will_go_on_hiatus_as_a_group_after_finishing_PROOF_promotions.avif)no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+}
+
+.header{
+    padding: 1rem 7%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin-top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    background: black;
+    opacity: 100%;
+}
+.logo img{
+    width: 60px;
+}
+.navbar a{
+    color: white;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+}
+.navbar a:hover{
+    color: var(--btn-color);
+    color: orange;
+}
+.icons div{
+    color: white;
+    font-size: 1.5rem;
+    margin-right: 10px;
+    display: none;
+    border-radius: 10px;
+}
+.icons div:hover{
+    cursor: pointer;
+}
+
+.icons a{
+    color: white;
+    padding: 0.6rem 1.5rem;
+    border: 3px solid orange;
+    border-radius: 10px;
+    font-size: 18px;
+   transition: 0.5s;
+   display: inline-block;
+}
+.icons a:hover{
+    transform: scale(1.1);
+    background: var(--btn-color);
+    border: 3px solid white;
+    color: white;
+    background-color: orange;
+}
+
+
+/* .icons a:hover,
+.icons a.activelogin{
+    color: black;
+    border-bottom: 3px solid white;
+    text-decoration: none;
+    transform: scale(1.1);
+    background: var(--btn-color);
+    border: 3px solid white;
+} */
+
+
+
+.navbar.active{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.login-container
+{
+    width: 400px;
+    height: 500px;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    border-radius: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.5);
+}
+
+h2
+{
+    color: #ffff;
+    font-size: 2em;
+    text-transform: uppercase;
+    padding: 20px 0;
+}
+
+.form-group
+{
+    position: relative;
+    width: 330px;
+    margin: 30px 0;
+    border-bottom: 3px solid #ffff;
+}
+
+.form-group input
+{
+    width: 100%;
+    height: 50px;
+    padding: 0 35px 0 10px;
+    font-size: 1.2em;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+}
+
+.form-group label
+{
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    font-size: 1.2em;
+    color: #fff;
+    transition: 0.5s;
+}
+
+input:focus ~ label,
+input:valid ~ label
+{
+    top: -5px;
+}
+
+.form-group i
+{
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: #ffff;
+    font-size: 1.2em;
+}
+
+p
+{
+    text-align: center;
+    color: #fff;
+    margin: 10px 0;
+}
+
+p>a
+{
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+}
+
+p>a:hover
+{
+    text-decoration: underline;
+    font-style: italic;
+}
+
+#btn
+{
+    width: 100%;
+    height: 50px;
+    border-radius: 40px;
+    border: none;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+#btn:hover
+{
+    background: rgba(0, 0, 0, 0.3);
+    color: #fff;
+}
+    </style>
+</head>
+
+<body>
+     
+    <header class="header">
+        <div class="logo">
+            <img src="WhatsApp Image 2025-08-21 at 1.30.14 PM.jpeg" alt="">
+        </div>
+        <!-- <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="menu.html">Our Menu</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contactus.html">Contact Us</a>
+        </nav> -->
+
+        <div class="icons">
+            <a href="quiz.html" class="activelogin">Quiz Page👈🏻</a>
+        </div>
+    </header>
+    <div class="login-container">
+    <h2 style="text-align: center;">Only Bday Girl can Login🦋</h2>
+
+    <!-- Username Field -->
+    <div class="form-group">
+        <input type="text" id="username" placeholder="Username" required>
+    </div>
+
+    <!-- User ID Field (Replaces Password) -->
+    <div class="form-group">
+        <input type="password" id="userid" placeholder="User ID" required>
+    </div>
+
+    <!-- Remember Me & Forget Password -->
+    <p>
+        <input type="checkbox"> Remember Me 
+        <a href="birthday.html">Forget User ID</a>
+    </p>
+
+    <!-- Login Button -->
+    <button id="btn" onclick="login()">Login</button>
+
+    <!-- OTP Section (Initially Hidden) -->
+    <div id="otp-section" style="display:none; width:100%; align-items:center;">
+        <div class="form-group">
+            <input type="text" id="otp" placeholder="Enter OTP" required>
+        </div>
+        <button id="btn" onclick="verifyOTP()">Verify OTP</button>
+    </div>
+</div>
+
+
+   <script>
+function login() {
+    const username = document.getElementById("username").value;
+    const userid = document.getElementById("userid").value;
+
+    if (username === "Pallavi👤" && userid === "snowdrop094_") {
+        document.getElementById("otp-section").style.display = "flex";
+        alert("OTP Sent! Please check your messages for the OTP. 🦋");
+    } else {
+        alert("Invalid credentials. Try again, birthday butterfly 🦋");
+    }
+}
+
+function verifyOTP() {
+    const otp = document.getElementById("otp").value;
+
+    if (otp === "235711") {
+        localStorage.setItem("loggedIn", "true");
+        alert("OTP verified! Welcome to your magical world 🎉");
+        window.location.href = "Pallavi.html";
+    } else {
+        alert("Warning! This attempt has been recorded and sent to site owner. This is a strict warning.");
+    }
+}
+</script>
+</body>
+</html>
